@@ -1,0 +1,1 @@
+<view class="container"><view class="left-top-sign">LOGIN</view><view class="welcome">欢迎回来！</view><button class="confirm-btn" open-type="getUserInfo" disabled="{{logining}}" data-event-opts="{{[['getuserinfo',[['wxLogin',['$event']]]]]}}" bindgetuserinfo="__e">微信授权登录</button></view>

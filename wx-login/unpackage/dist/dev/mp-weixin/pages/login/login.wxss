@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+.container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  background: #fff;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.container .left-top-sign {
+    font-size: 120rpx;
+    color: #f8f8f8;
+    position: relative;
+    left: -10rpx;
+    margin-top: 100rpx;
+}
+.container .welcome {
+    position: relative;
+    left: 50rpx;
+    top: -90rpx;
+    font-size: 46rpx;
+    color: #555;
+    text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.3);
+}
+.container .confirm-btn {
+    width: 630rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    border-radius: 50px;
+    margin-top: 70rpx;
+    background: #fa436a;
+    color: #fff;
+    font-size: 32rpx;
+}
+.container .confirm-btn:after {
+      border-radius: 100px;
+}
+
