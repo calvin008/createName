@@ -10,7 +10,9 @@
 
 持久化数据库mysql8.0.16
 
-![微信登录流程](F:\demo\app\wx-login-uni\微信登录流程.jpg)
+![image](https://github.com/calvin008/weixin-login/blob/master/image/login-api.jpg)
+
+![image](https://github.com/calvin008/weixin-login/blob/master/image/show.gif)
 
 ### 1.2 微信小程序登录步骤
 
