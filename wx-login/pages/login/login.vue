@@ -21,8 +21,44 @@ export default {
 		const that = this;
 		that.logining = true;
 		let userInfo = e.detail.userInfo;
-		console.log(e.detail)
-		}	
+		uni.login({
+			provider:"weixin",
+			success:(login_res => {
+				let code = login_res.code;
+				uni.getUserInfo({
+					success(info_res) {
+						console.log(info_res)
+						uni.request({
+							url:'http://localhost:8080/wxlogin',
+							method:"POST",
+							header: {
+							                  'content-type': 'application/x-www-form-urlencoded'
+							                },
+							data:{
+								code : code,
+								rawData : info_res.rawData
+							},
+							success(res) {
+								if(res.data.status == 200){
+									that.$store.commit('login',userInfo);
+									// uni.setStorageSync("userInfo",userInfo);
+									// uni.setStorageSync("skey", res.data.data);
+								}else{
+									console.log('服务器异常')
+								}
+							},
+							fail(error) {
+								console.log(error)
+							}
+						})
+						uni.hideLoading()
+						uni.navigateBack()
+					}
+				})
+				
+			})
+			})
+		}
 	}
 };
 </script>

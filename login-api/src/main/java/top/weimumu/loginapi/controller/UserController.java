@@ -36,19 +36,22 @@ public class UserController {
         String sessionKey = SessionKeyOpenId.getString("session_key");
         User user = this.userMapper.selectById(openid);
         String skey = UUID.randomUUID().toString();
+        System.out.println(openid);
         if(user == null){
             String nickName = rawDataJson.getString("nickName");
             String avatarUrl = rawDataJson.getString("avatarUrl");
             user = new User();
-            user.setOpenid(openid);
+            user.setOpenId(openid);
             user.setSkey(skey);
             user.setCreateTime(new Date());
             user.setLastVisitTime(new Date());
             user.setSession_key(sessionKey);
-            user.setAvatorUrl(avatarUrl);
-            user.setNickname(nickName);
+            user.setAvatarUrl(avatarUrl);
+            user.setNickName(nickName);
+            this.userMapper.insert(user);
         }else {
             // 已存在，更新用户登录时间
+            user = new User();
             user.setLastVisitTime(new Date());
             // 重新设置会话skey
             user.setSkey(skey);

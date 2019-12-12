@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -20,15 +21,15 @@ public class User {
     /**
      * openid
      */
-    private String openid;
+    private String openId;
     /**
      * 用户头像
      */
-    private String avatorUrl;
+    private String avatarUrl;
     /**
      * 用户网名
      */
-    private String nickname;
+    private String nickName;
     /**
      * session_key
      */
@@ -41,13 +42,13 @@ public class User {
      * 创建时间
      */
     @TableField("create_time")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date createTime;
     /**
      * 最后登录时间
      */
     @TableField("last_visit_time")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date lastVisitTime;
 
 }

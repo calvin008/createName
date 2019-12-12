@@ -122,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -145,8 +145,45 @@ var _default = { data: function data() {return { logining: false };}, onLoad: fu
       var that = this;
       that.logining = true;
       var userInfo = e.detail.userInfo;
-      console.log(e.detail);
+      uni.login({
+        provider: "weixin",
+        success: function success(login_res) {
+          var code = login_res.code;
+          uni.getUserInfo({
+            success: function success(info_res) {
+              console.log(info_res);
+              uni.request({
+                url: 'http://localhost:8080/wxlogin',
+                method: "POST",
+                header: {
+                  'content-type': 'application/x-www-form-urlencoded' },
+
+                data: {
+                  code: code,
+                  rawData: info_res.rawData },
+
+                success: function success(res) {
+                  if (res.data.status == 200) {
+                    that.$store.commit('login', userInfo);
+                    // uni.setStorageSync("userInfo",userInfo);
+                    // uni.setStorageSync("skey", res.data.data);
+                  } else {
+                    console.log('服务器异常');
+                  }
+                },
+                fail: function fail(error) {
+                  console.log(error);
+                } });
+
+              uni.hideLoading();
+              uni.navigateBack();
+            } });
+
+
+        } });
+
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

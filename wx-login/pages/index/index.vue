@@ -2,7 +2,7 @@
 	<view class="content">
 		<image class="logo" :src="userInfo.avatarUrl || '/static/missing-face.png'"></image>
 		<view class="text-area">
-			<text class="title" @click="toLogin">{{ hasLogin ? userInfo.username || '未设置昵称' : '立即登录' }}</text>
+			<text class="title" @click="toLogin">{{ hasLogin ? userInfo.nickName || '未设置昵称' : '立即登录' }}</text>
 		</view>
 	</view>
 </template>
