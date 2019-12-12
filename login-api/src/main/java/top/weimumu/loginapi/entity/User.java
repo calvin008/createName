@@ -21,6 +21,7 @@ public class User {
     /**
      * openid
      */
+    @TableId(value = "open_id",type = IdType.INPUT)
     private String openId;
     /**
      * 用户头像

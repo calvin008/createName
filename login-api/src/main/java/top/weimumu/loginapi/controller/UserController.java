@@ -29,15 +29,14 @@ public class UserController {
     public GlobalResult wxLogin(
             @RequestParam(value = "code", required = false) String code,
             @RequestParam(value = "rawData", required = false) String rawData
-    ){
+    ) {
         JSONObject rawDataJson = JSON.parseObject(rawData);
         JSONObject SessionKeyOpenId = WechatUtil.getSessionKeyOrOpenId(code);
         String openid = SessionKeyOpenId.getString("openid");
         String sessionKey = SessionKeyOpenId.getString("session_key");
         User user = this.userMapper.selectById(openid);
         String skey = UUID.randomUUID().toString();
-        System.out.println(openid);
-        if(user == null){
+        if (user == null) {
             String nickName = rawDataJson.getString("nickName");
             String avatarUrl = rawDataJson.getString("avatarUrl");
             user = new User();
@@ -51,13 +50,14 @@ public class UserController {
             this.userMapper.insert(user);
         }else {
             // 已存在，更新用户登录时间
-            user = new User();
+
             user.setLastVisitTime(new Date());
-            // 重新设置会话skey
+//            // 重新设置会话skey
             user.setSkey(skey);
+
             this.userMapper.updateById(user);
         }
-        GlobalResult result = GlobalResult.build(200,null, skey);
-        return  result;
+        GlobalResult result = GlobalResult.build(200, null, skey);
+        return result;
     }
 }
