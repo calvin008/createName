@@ -1,6 +1,78 @@
-# uni-app微信小程序登录
+# uni-app微信小程序----“起名”
 
-## 第一章 前端页面
+## 第一章 uni-app入门
+
+### 1-1 uni-app简介
+
+
+
+### 1-2 小程序项目介绍
+
+### 
+
+
+
+### 1-3  uni-app安装及目录介绍
+
+#### 下载hbuilderx
+
+要讲UNI-APP,不得不介绍dcloud旗下一款轻量级ide编辑器hbuilderx
+
+下载地址dcloud.io官网下载
+
+hx mac和win之间分为标准和APP版
+
+标准版需要自己安装插件，app开发版已经把app开发常用的插件预先集成，开箱即可用
+
+#### UNI-APP有两种创建方式
+
+使用 vue-cli 脚手架 创建 uni-app
+
+| cli创建UNI-APP目录名称 | 解析                                                         |
+| ---------------------- | ------------------------------------------------------------ |
+| dist ->build           | 存放通过build编译的各个平台的代码，如mp-weixin               |
+| node_modules           | 项目依赖包模块                                               |
+| public                 | 放置的为公共文件，比如index.html文件，为项目的生成模板，我们写的vue的代码，在webpack打包项目的时候，最后都会基于该模板转换为浏览器可读的三大件：html+javascript+css |
+| src                    | 存放通过HBuilderX可视化界面创建的的所有目录，为源码目录      |
+| .gitignore             | git上传需要忽略的文件格式                                    |
+| babel.config.js        | ES6语法编译配置                                              |
+| package.json           | 项目基本信息                                                 |
+| package-lock.json      | 锁定安装时的包的版本号，并且需要上传到git，以保证其他人在npm install时大家的依赖能保证一致 |
+| postcss.config.js      | postcss-loader 的配置文件名，通过js对 CSS 进行处理           |
+| README.md              | 项目说明                                                     |
+
+
+
+| **pages**     | 业务页面文件存放的目录                                       |
+| ------------- | ------------------------------------------------------------ |
+| **static**    | 存放应用引用静态资源（如图片、视频等）的地方，注意：静态资源只能存放于此 |
+| app.vue       | 应用配置，用来配置App全局样式以及监听生命周期                |
+| main.js       | Vue初始化入口文件                                            |
+| manifest.json | 配置应用名称、appid、logo、版本等打包信息                    |
+| pages.json    | 配置页面路由、导航条、选项卡等页面类信息                     |
+| uni.scss      | 全局样式                                                     |
+
+### 1-4  Hbuilder编辑器特性
+
+1单机响应
+
+2热退出
+
+3
+
+### 1-5  uni-app配置tabbar
+
+mainfest.json
+
+pages.json
+
+
+
+
+
+## 第二章 前端页面
+
+
 
 ### 1.1 简介
 
@@ -12,11 +84,11 @@
 
 效果展示:
 
-![image](https://github.com/calvin008/weixin-login/blob/master/image/show.gif)
+![image](https://github.com/calvin008/weixin-login/blob/master/image/show.gif?raw=true)
 
 ### 1.2 微信小程序登录步骤
 
-![image](https://github.com/calvin008/weixin-login/blob/master/image/login-api.jpg)
+![image](https://github.com/calvin008/weixin-login/blob/master/image/login-api.jpg?raw=true)
 
 *第一步：小程序通过uni.login()获取code。*
 
