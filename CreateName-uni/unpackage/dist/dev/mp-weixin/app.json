@@ -1,15 +1,43 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/name/name",
+    "pages/me/me",
+    "pages/details/details",
     "pages/login/login"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "wx-login",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "navigationBarTitleText": "CreateName",
+    "navigationBarBackgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#C0C4CC",
+    "selectedColor": "#2C2C2C",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/create.png",
+        "selectedIconPath": "static/create-current.png",
+        "text": "起名"
+      },
+      {
+        "pagePath": "pages/name/name",
+        "iconPath": "static/name.png",
+        "selectedIconPath": "static/name-current.png",
+        "text": "鉴名"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "static/wode.png",
+        "selectedIconPath": "static/wode-current.png",
+        "text": "我的"
+      }
+    ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap42.json"
+  "sitemapLocation": "sitemap94.json"
 }

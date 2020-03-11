@@ -1,0 +1,41 @@
+
+.mix-load-more{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	height: 90rpx;
+	padding-top: 10rpx;
+}
+.mix-load-icon{
+	display: block;
+	width: 36rpx;
+	height: 36rpx;
+	margin-right: 12rpx;
+	-webkit-animation: load 1.2s cubic-bezier(.37,1.08,.7,.74) infinite;
+	        animation: load 1.2s cubic-bezier(.37,1.08,.7,.74) infinite;
+}
+.mix-load-text{
+	font-size: 28rpx;
+	color: #888;
+}
+@-webkit-keyframes load {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+

@@ -34,4 +34,10 @@
 	font-size: 36rpx;
 	color: #8f8f94;
 }
+.section {
+	padding: 30rpx 0 0;
+	margin-top: 40rpx;
+	background: #fff;
+	border-radius:10rpx;
+}
 

@@ -3,20 +3,64 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "首页"
+				"navigationBarTitleText": "起名"
 			}
 		},
 		{
-			"path": "pages/login/login",
+			"path": "pages/name/name",
 			"style": {
-				"navigationBarTitleText": "login"
+				"navigationBarTitleText": "鉴名"
+			}
+		},
+		{
+			"path": "pages/me/me",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path":"pages/details/details",
+			"style":{
+				"navigationBarTitleText":"详情"
+			}
+		},
+		{
+			"path":"pages/login/login",
+			"style":{
+				"navigationBarTitleText":"登录"
 			}
 		}
+		
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "wx-login",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTitleText": "CreateName",
+		"navigationBarBackgroundColor": "#FFFFFF"
+	},
+	"tabBar": {
+		"color":"#C0C4CC",
+		"selectedColor":"#2C2C2C",
+		"borderStyle":"black",
+		"backgroundColor":"#ffffff",
+		"list": [
+			{
+				"pagePath":"pages/index/index",
+				"iconPath":"static/create.png",
+				"selectedIconPath":"static/create-current.png",
+				"text":"起名"
+			},
+			{
+			"pagePath":"pages/name/name",
+			"iconPath":"static/name.png",
+			"selectedIconPath":"static/name-current.png",
+			"text":"鉴名"
+			},
+			{
+				"pagePath":"pages/me/me",
+				"iconPath":"static/wode.png",
+				"selectedIconPath":"static/wode-current.png",
+				"text":"我的"
+			}
+		]
 	}
 }

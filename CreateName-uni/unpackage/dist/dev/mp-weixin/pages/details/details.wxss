@@ -1,0 +1,21 @@
+
+.page {
+	height: 100Vh;
+	width: 100vw;
+}
+.page.show {
+	overflow: hidden;
+}
+.switch-sex::after {
+	content: "\E716";
+}
+.switch-sex::before {
+	content: "\E7A9";
+}
+.switch-music::after {
+	content: "\E66A";
+}
+.switch-music::before {
+	content: "\E6DB";
+}
+
