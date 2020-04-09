@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("top.weimumu.loginapi.dao")
+@MapperScan("top.weimumu.loginapi.mapper")
 public class LoginApiApplication {
 
     public static void main(String[] args) {

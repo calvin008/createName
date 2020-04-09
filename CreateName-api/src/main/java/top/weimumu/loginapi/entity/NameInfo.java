@@ -1,40 +1,54 @@
 package top.weimumu.loginapi.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-
+import lombok.experimental.Accessors;
 import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 /**
- * @author: create by calvin wong
- * @date:2020/3/23
- **/
+ * <p>
+ * 
+ * </p>
+ *
+ * @author calvin
+ * @since 2020-03-30
+ */
 @Data
-@TableName("name_info")
-public class NameInfo {
+@Accessors(chain = true)
+public class NameInfo  {
 
-    /** 主键id */
-    private String name_id;
+    private static final long serialVersionUID = 1L;
 
-    /** 姓氏 */
+    private String nameId;
+
+    /**
+     * 姓氏
+     */
     private String surname;
 
-    /** 名字 */
+    /**
+     * 名字
+     */
     private String ming;
 
-    /** 性别*/
+    /**
+     * 性别 1男 2女
+     */
     private Integer gender;
 
-    /** 评分 */
+    /**
+     * 名字评分
+     */
     private BigDecimal score;
 
-    /** 八字id*/
-    private Integer bazi_id;
+    /**
+     * 八字id
+     */
+    private Integer baiziId;
 
-   /** 创建时间*/
-    private Timestamp createTime;
+    private LocalDateTime createTime;
 
-    /** 修改时间*/
-    private  Timestamp updateTime;
+    private LocalDateTime updateTime;
+
+
 }

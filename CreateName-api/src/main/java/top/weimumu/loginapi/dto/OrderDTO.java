@@ -20,7 +20,7 @@ public class OrderDTO {
     private String surname;
 
     /** 性别 */
-    private Integer sex;
+    private Integer gender;
 
     /** 出生日期 */
     private Date birth_time;
@@ -30,6 +30,9 @@ public class OrderDTO {
 
     /** 用户身份识别open_id*/
     private String open_id;
+
+    /** 八字id*/
+    private Integer bazi_id;
 
     /** 创建时间. */
     private Date createTime;

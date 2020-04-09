@@ -1,20 +1,26 @@
 package top.weimumu.loginapi.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
-
-import java.sql.Timestamp;
+import lombok.experimental.Accessors;
+import java.time.LocalDateTime;
 
 /**
- * @author: create by calvin wong
- * @date:2020/3/20
- **/
+ * <p>
+ * 八字表
+ * </p>
+ *
+ * @author calvin
+ * @since 2020-03-30
+ */
 @Data
-@TableName("Bazi_info")
+@Accessors(chain = true)
 public class BaziInfo {
-    /**
-     * 主键id
-     */
+
+    private static final long serialVersionUID = 1L;
+
+    @TableId(value = "bazi_id", type = IdType.AUTO)
     private Integer baziId;
 
     /**
@@ -23,15 +29,13 @@ public class BaziInfo {
     private String baziType;
 
     /**
-     * 八字内容
+     * 喜用神信息
      */
     private String baziContent;
-    /**
-     * 创建时间
-     */
-    private Timestamp createTime;
-    /**
-     * 修改时间
-     */
-    private  Timestamp updateTime;
+
+    private LocalDateTime createTime;
+
+    private LocalDateTime updateTime;
+
+
 }

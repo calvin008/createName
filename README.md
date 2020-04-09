@@ -1,20 +1,40 @@
 # uni-app微信小程序----“起名”
 
-## 第一章 uni-app入门
+## 第一章 简介
 
-### 1-1 uni-app简介
+### 1-1 宝宝起名简介
+
+> 来自给宝宝起名做的功课，了解一些国人在起名方面的讲究
+
+#### 中国人起名有哪些讲究？
+
+**首先得避讳；**
+
+一避讳国讳；
+
+二避讳帝王；
+
+三避讳先贤；
+
+四避讳先人；
+
+五避讳虚拟人名；
+
+六忌讳生僻字；
+
+七避讳多音字；
+
+**根据中国人文化传统起名**
+
+三才五格法（通过笔画判定吉凶）
+
+八字法（通过生辰判定五行盛衰）
+
+寓意法（通过耳熟能详的美好诗句、成语组合起名）
 
 
 
-### 1-2 小程序项目介绍
-
-宝宝在线起名一直是中国人的刚需，与其路边寻找大师，不如求教线上业务
-
-目前只在淘宝搜索：发现营业额极高，那就让我们把大师的价格打下去
-
-![image-20200305151834887](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200305151834887.png)
-
-![image-20200305151850634](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200305151850634.png)
+通过这些方法达到数理得当、八字匹配、寓意美好、高端大气；
 
 ### 数理派
 
@@ -510,7 +530,21 @@
 
 
 
-### 1-3  uni-app安装及目录介绍
+### 1-2 小程序简介
+
+宝宝在线起名一直是中国人的刚需，与其路边寻找大师，不如求教线上业务
+
+目前只在淘宝搜索：发现营业额极高，那如果用一个小程序将各大派系的起名逻辑整合上线，就能帮助大家在起名的时候省下一笔奶粉钱！
+
+![image-20200305151834887](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200305151834887.png)
+
+![image-20200305151850634](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200305151850634.png)
+
+
+
+## 第二章 uni-app了解下
+
+### 2-1  uni-app安装及目录介绍
 
 #### 下载hbuilderx
 
@@ -552,7 +586,7 @@ hx mac和win之间分为标准和APP版
 
 
 
-### 1-4  uni-app配置
+### 2-2 uni-app配置
 
 
 
@@ -578,11 +612,9 @@ pages.json
 
 
 
-## 第二章 整体设计
+## 第三章 整体设计
 
-### 2.1api接口设计
-
-#### 首先我们了解下
+### 3-1 api接口设计
 
 什么是前后端分离？
 
@@ -600,8 +632,6 @@ pwa
 
 本项目是一款基于 SpringBoot 的 Api 服务器脚手架。服务端基础通用框架提取，配以详细的说明文档，针对 Restful 风格 API 服务器，降低学习成本，提高开发效率
 
-#### API设计规范
-
 设计接口是一件容易的事，也是件困难的事。设计接口每个人都会，每个人都能设计，也由此产生了各种各样的理念的接口。工作这么多年，我也很有感悟。很多人会说，设计接口多么简单，只要命名好，然后联调通了，上线可以调用就行了。特别是非互联网行业的人，这里没有歧视的意思。因为互联网行业和传统行业太多不一致性决定了这种思想的产生。
 
 
@@ -610,13 +640,13 @@ pwa
 
 **格式{ "data": 返回数据, "code": 状态码, "msg": "返回描述"}**
 
-### 2.2 mysql数据库搭建
+### 3-2 mysql数据库搭建
 
 本机vmware搭建centos7环境
 
 使用docker安装mysql8
 
-### 2.3 mysql数据库创建和设计规范
+### 3-3 mysql数据库创建和设计规范
 
 > #### **《mysql设计规范》**
 >
@@ -837,7 +867,7 @@ Query OK, 0 rows affected (0.01 sec)
 
 算法换成mysql_native_password即可
 
-#### user数据表建立
+### 3-4 user数据表建立
 
 配置application.yml
 
@@ -852,30 +882,13 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 ```
 
-创建表格
 
-```
-CREATE TABLE `user`  (
-  `open_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'open_id',
-  `skey` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'skey',
-  `create_time` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `last_visit_time` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后登录时间',
-  `session_key` varchar(100) CHARACTER SET  COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'session_key',
-  `avatar_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '头像',
-  `nick_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '网名',
-  PRIMARY KEY (`open_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '微信用户信息' ;
-```
+
+## 第四章 前端页面
 
 
 
-## 
-
-## 第三章 前端页面
-
-
-
-### 3.1 前端登录login开发
+### 4-1 前端登录login开发
 
 前端使用uni-app
 
@@ -1084,9 +1097,9 @@ export default {
 
 
 
-## 第四章 uni-app业务逻辑开发
+## 第五章 uni-app业务逻辑开发
 
-### 4.1 vuex在uni-app中的使用
+### 5-1 vuex在uni-app中的使用
 
 ```
 import Vue from 'vue'
@@ -1129,7 +1142,7 @@ export default store
 
 
 
-### 4.2 登录功能实现
+### 5-2 登录功能实现
 
 小程序已经抛弃getUserInfo,使用open-type绑定即可;
 
@@ -1148,9 +1161,9 @@ export default store
 
 
 
-## 第五章 springboot开发后端接口
+## 第六章 springboot开发后端接口
 
-### 4.1  entity
+### 6-1 entity
 
 ```
 package top.weimumu.loginapi.entity;
@@ -1211,7 +1224,7 @@ public class User {
 
 ```
 
-### 4.2 mapper
+### 6-2 mapper
 
 ```
 package top.weimumu.loginapi.dao;
@@ -1229,7 +1242,7 @@ public interface UserMapper extends BaseMapper<User> {
 
 ```
 
-### 4.3 common封装工具类
+### 6-3 common封装工具类
 
 GolbalResult
 
@@ -1561,7 +1574,7 @@ public class WechatUtil {
 
 ```
 
-### 4.3 controller
+### 6-4 controller
 
 ```
 package top.weimumu.loginapi.controller;

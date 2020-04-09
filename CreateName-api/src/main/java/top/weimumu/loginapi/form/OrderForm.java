@@ -12,6 +12,9 @@ import java.util.Date;
 
 @Data
 public class OrderForm {
+    /** 用户微信open_id*/
+    @NotEmpty(message = "open_id不能为空")
+    private  String open_id;
     /** 姓氏*/
     @NotEmpty(message="姓氏不能为空")
     private String surname;

@@ -1,9 +1,11 @@
 package top.weimumu.loginapi.common;
 
+
 /**
  * @author: create by calvin wong
  * @date:2019/12/10
  **/
+
 public class GlobalResult {
     // 响应业务状态
     private Integer status;

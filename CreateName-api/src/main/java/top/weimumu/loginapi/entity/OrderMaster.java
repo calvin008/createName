@@ -1,57 +1,38 @@
 package top.weimumu.loginapi.entity;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-import java.sql.Timestamp;
+import lombok.experimental.Accessors;
+import java.time.LocalDateTime;
 
 /**
- * @author: create by calvin wong
- * @date:2020/3/20
- **/
+ * <p>
+ * 订单表
+ * </p>
+ *
+ * @author calvin
+ * @since 2020-03-30
+ */
 @Data
-@TableName("order_master")
+@Accessors(chain = true)
 public class OrderMaster {
-    /**
-     * 主键
-     */
-    @TableId
+
+    private static final long serialVersionUID = 1L;
+
     private String orderId;
 
-    /**
-     * 姓氏
-     */
+    private LocalDateTime birthTime;
+
     private String surname;
 
-    /**
-     *
-     * 出生时间
-     */
-    private Timestamp birth_time;
+    private String detailId;
 
-    /**
-     * 名字详情id
-     */
-    private String detail_id;
+    private String openId;
 
-    /**
-     * 用户open_id
-     */
-    private String open_id;
-
-    /**
-     * 性别
-     */
     private Integer gender;
 
-    /**
-     * 创建时间
-     */
-    private Timestamp createTime;
+    private LocalDateTime createTime;
 
-    /**
-     * 修改时间
-     */
-    private  Timestamp updateTime;
+    private LocalDateTime updateTime;
+
 
 }
