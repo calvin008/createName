@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "鉴名",
-  "usingComponents": {
-    "down-refresh": "/components/down-refresh",
-    "up-load": "/components/up-load"
-  }
-}

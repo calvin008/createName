@@ -1,0 +1,13 @@
+<wxs module="tools">
+function fn(arr, value) {
+	if(arr.indexOf(value) < 0) {
+		return false;
+	} else {
+		return true;
+	}
+}
+module.exports = {
+	fn:fn
+};
+</wxs>
+<view class="content"><view><radio-group data-event-opts="{{[['change',[['radioChange',['$event']]]]]}}" class="radio-group" bindchange="__e"><block wx:for="{{array}}" wx:for-item="item" wx:for-index="index" wx:key="index"><label class="radio"><view><radio value="{{item}}" color="#000000" checked="{{index===current}}"></radio></view><view>{{item}}</view></label></block></radio-group></view><view class="form-item"><image class="img" src="../../static/icon_search.png"></image><input type="text" placeholder="请输入姓氏" data-event-opts="{{[['input',[['__set_model',['','userName','$event',[]]]]]]}}" value="{{userName}}" bindinput="__e"/><button class="button" type="primary" size="mini" data-event-opts="{{[['tap',[['subName',['$event']]]]]}}" bindtap="__e">起名</button></view><view class="name-list"><block wx:for="{{nameList}}" wx:for-item="item" wx:for-index="__i0__" wx:key="_id"><view class="name-container"><view class="name-info"><view>{{userName}}</view><block wx:for="{{item.name}}" wx:for-item="name" wx:for-index="index" wx:key="index"><view>{{name}}</view></block></view><view class="sentence"><view>[</view><block wx:for="{{item.sentence}}" wx:for-item="sentence" wx:for-index="index" wx:key="index"><view class="{{[tools.fn(item.name,sentence)?'active':'black']}}">{{''+sentence+''}}</view></block><view>]</view></view><view class="name-other"><view>{{item.book+" ● "+item.title}}</view><view>{{"["+item.dynasty+"] "+item.author}}</view></view></view></block></view></view>
