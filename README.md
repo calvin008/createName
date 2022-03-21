@@ -14,9 +14,12 @@
 
 ## 项目预览
 ![](https://github.com/calvin008/createName/blob/master/img/img.gif)
+## 课程简介
 
-
-
+已经录制成课,后面更新的版本因为审核原因已经回退到1.0版本,
+微信小程序不支持玄学元素,但是大家可以作为参考,课程是vue2语法开发,领劵后价格很便宜,大家有需要就去了解
+unicloud的数据库是放在了data.init中,初始化即可
+https://ke.qq.com/course/3518498?tuin=113a0b7a
 ## 第一章 简介
 
 ### 1-1 宝宝起名简介
